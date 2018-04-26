@@ -1,41 +1,23 @@
-int x = 500;
+int x = 50;
 int y = 487;
-int w = 30;
-int h = 12;
-int base = 14;
-int rows = 14;
-
+int BRICK_WIDTH = 30;
+int StartX = 30;
+int BRICK_HEIGHT = 12;
+int BRICKS_IN_BASE = 14;
 void setup (){
-size(1000,1000);
-background(255, 255, 255);
+   size(500, 500);
+   background(255, 255, 255);
 }
-
 void draw(){
-
-  for(int i = 0; i<14; i++){
-  for(int a = 0; a < base; a++){
-    
-    rect(x+w , y-h, w, h);
-
-    
-    x = w*i;
-    
-    y = y+12;
-    
-   
-  
+  for(int a = BRICKS_IN_BASE; a > 0; a--){
+    x=StartX;
+  for(int i = 0; i < a; i++){
+    rect(x + BRICK_HEIGHT , y - BRICK_WIDTH, BRICK_WIDTH , BRICK_HEIGHT);
+    x+=BRICK_WIDTH;
   }
- 
+   y-=BRICK_HEIGHT;
+   StartX+=15;
   }
-  
-  
-//  for(int a = 0; a < base; a++){
-//    rect(x + 35, y, width, height);
-//x = width*a;
-//    for(int i = 0; i < rows; i++){
-//        rows--;
-//      y = height*i;
-
-    
-//}}
+   x=0;
+   y=0;
 }
